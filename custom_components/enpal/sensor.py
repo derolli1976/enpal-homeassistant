@@ -282,14 +282,6 @@ class EnpalSensor(SensorEntity):
         self._attr_unique_id = f'enpal_{measurement}_{field}'
         self._attr_extra_state_attributes = {}
 
-        self._attr_device_info = DeviceInfo(
-            entry_type=DeviceEntryType.SERVICE,
-            identifiers={(DOMAIN, 'enpal')},
-            default_name="Enpal Solar Installation",
-            default_manufacturer="Enpal",
-            sw_version=VERSION,
-        )
-
     async def async_update(self) -> None:
 
         # Get the IP address from the API
